@@ -16,14 +16,14 @@ a way for fully automated builds of the package on all supported platforms
 
 The files herein are used chiefly by the respective build scripts for
 compiling [Rblpapi](https://github.com/Rblp/Rblpapi).  One can access the
-files via the 'raw' URLs, eg
-`https://github.com/Rblp/blp/raw/master/linux32/blpLibrary.tar.gz` for the
-archive containing the 32-bit Linux shared library.
+files via the 'raw' URLs, eg for the archive containing the 32-bit Linux
+shared library one uses
+`https://github.com/Rblp/blp/raw/master/linux32/blpLibrary.tar.gz` 
 
 ### License
 
 The BLP API is release under the following license (cf
-[License.txt](https://github.com/Rblp/blp/blob/master/License.txt):
+[License.txt](https://github.com/Rblp/blp/blob/master/License.txt)):
 
 > Copyright 2012. Bloomberg Finance L.P.
 > 
