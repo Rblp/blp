@@ -1,0 +1,39 @@
+#!/bin/bash
+
+cwd=$(pwd)
+
+## LINUX
+version=3.8.18.1
+cd $(mktemp -d)
+wget https://bloomberg.bintray.com/BLPAPI-Stable-Generic/blpapi_cpp_${version}-linux.tar.gz
+tar xzf blpapi_cpp_${version}-linux.tar.gz
+cd blpapi_cpp_${version}
+[ -f License.txt ] || cp ${cwd}/License.txt .
+tar czf ${cwd}/headers/linux/blpHeaders.tar.gz include License.txt
+tar czf ${cwd}/linux32/blpLibrary.tar.gz -C Linux libblpapi3_32.so
+tar czf ${cwd}/linux64/blpLibrary.tar.gz -C Linux libblpapi3_64.so
+cd ${cwd}
+
+## OSX
+version=3.8.1.1
+cd $(mktemp -d)
+wget https://bloomberg.bintray.com/BLPAPI-Experimental-Generic/blpapi_cpp_${version}-darwin.tar.gz
+tar xzf blpapi_cpp_${version}-darwin.tar.gz
+cd blpapi_cpp_${version}
+[ -f License.txt ] || cp ${cwd}/License.txt .
+tar czf ${cwd}/headers/osx/blpHeaders.tar.gz include License.txt
+tar czf ${cwd}/osx32/blpLibrary.tar.gz -C Darwin libblpapi3_32.so
+tar czf ${cwd}/osx64/blpLibrary.tar.gz -C Darwin libblpapi3_64.so
+cd ${cwd}
+
+## WINDOWS
+version=3.8.18.1
+cd $(mktemp -d)
+wget https://bloomberg.bintray.com/BLPAPI-Stable-Generic/blpapi_cpp_${version}-windows.zip
+unzip blpapi_cpp_${version}-windows.zip
+cd blpapi_cpp_${version}
+[ -f License.txt ] || cp ${cwd}/License.txt .
+tar czf ${cwd}/headers/windows/blpHeaders.tar.gz include License.txt
+tar czf ${cwd}/win32/blpLibrary.tar.gz -C lib blpapi3_32.dll
+tar czf ${cwd}/win64/blpLibrary.tar.gz -C lib blpapi3_64.dll
+cd ${cwd}
