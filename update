@@ -3,7 +3,7 @@
 cwd=$(pwd)
 
 ## LINUX
-version=3.8.18.1
+version=3.12.3.1
 cd $(mktemp -d)
 wget https://bloomberg.bintray.com/BLPAPI-Stable-Generic/blpapi_cpp_${version}-linux.tar.gz
 tar xzf blpapi_cpp_${version}-linux.tar.gz
@@ -15,7 +15,7 @@ tar czf ${cwd}/linux64/blpLibrary.tar.gz -C Linux libblpapi3_64.so
 cd ${cwd}
 
 ## OSX
-version=3.8.1.1
+version=3.13.1.1
 cd $(mktemp -d)
 wget https://bloomberg.bintray.com/BLPAPI-Experimental-Generic/blpapi_cpp_${version}-darwin.tar.gz
 tar xzf blpapi_cpp_${version}-darwin.tar.gz
@@ -27,7 +27,7 @@ tar czf ${cwd}/osx64/blpLibrary.tar.gz -C Darwin libblpapi3_64.so
 cd ${cwd}
 
 ## WINDOWS
-version=3.8.18.1
+version=3.12.3.1
 cd $(mktemp -d)
 wget https://bloomberg.bintray.com/BLPAPI-Stable-Generic/blpapi_cpp_${version}-windows.zip
 unzip blpapi_cpp_${version}-windows.zip
